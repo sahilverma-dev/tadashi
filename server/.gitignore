@@ -1,0 +1,9 @@
+*node_modules
+
+*.next
+*.env
+*.env.local
+*.log
+
+*.lock
+package-lock.json
