@@ -14,8 +14,8 @@ const Accodion = () => {
           <p className="text-gray-500 sm:text-xl dark:text-gray-200">
             The purpose of this FAQ is generally to provide information on
             frequent questions or concerns about iGram.io downloader. In case
-            you can't find the answer for your question, feel free to ask trough
-            email our contact page.
+            you can&apos;t find the answer for your question, feel free to ask
+            trough email our contact page.
           </p>
         </div>
         <div className="my-2 md:my-12">

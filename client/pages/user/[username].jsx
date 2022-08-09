@@ -241,7 +241,7 @@ const UserProfile = () => {
                   {profileData?.isPrivate && (
                     <div className="flex items-center justify-center my-80">
                       <div className="text-center">
-                        Can't access this account because it is private.
+                        Can&apos;t access this account because it is private.
                       </div>
                     </div>
                   )}
@@ -269,8 +269,8 @@ const UserProfile = () => {
                     User not Found.
                   </p>
                   <p className="mb-4 text-lg font-light text-gray-500 dark:text-gray-400">
-                    Sorry, we can't find that page. You'll find lots to explore
-                    on the home page.
+                    Sorry, we can&apos;t find that page. You&apos;ll find lots
+                    to explore on the home page.
                   </p>
                   <Link href="/">
                     <a
