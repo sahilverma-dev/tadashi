@@ -62,13 +62,9 @@ const IGTVDownload = () => {
     } catch (error) {
       console.log(error);
       toast.error("Error Saving Post", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        theme,
+        autoClose: 1500,
+        hideProgressBar: true,
       });
     }
     // console.log(post);
@@ -89,27 +85,28 @@ const IGTVDownload = () => {
       console.log(error);
       setIsLoading(false);
       setShowVideo(true);
-      toast.error("Something is wrong");
+      toast.error("Something is wrong", {
+        theme,
+        autoClose: 1500,
+        hideProgressBar: true,
+      });
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(instaIGTVId(link?.trim()));
     if (validURL(link)) {
-      setShortcode(instaIGTVId(link));
-      const code = instaIGTVId(link);
+      setShortcode(instaIGTVId(link.trim()));
+      const code = instaIGTVId(link.trim());
       if (code) {
         setIsLoading(true);
         fetchPost(code);
       } else {
         toast.error("Invalid Link.", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
+          theme,
+          autoClose: 1500,
+          hideProgressBar: true,
         });
         return;
       }
