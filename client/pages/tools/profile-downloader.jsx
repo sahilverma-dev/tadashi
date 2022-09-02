@@ -148,7 +148,7 @@ const ProfileDownload = () => {
             <iframe
               allowFullScreen={true}
               title="YouTube video player"
-              src="https://www.youtube.com/embed/etWUJtTJK5M"
+              src={process.env.NEXT_PUBLIC_YOUTUBE_VIDEO}
               frameBorder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               className="aspect-video mx-auto mb-6 w-full max-w-4xl rounded-lg border dark:border-dark-900 border-gray-300 shadow-2xl"
