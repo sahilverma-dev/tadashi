@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 const PrivacyPolicy = () => {
   return (
     <Layout title="Privacy Policy" description="Privacy Policy of Tadashi">
-      <section class Name="mx-auto max-w-7xl py-8 px-4">
+      <section className="mx-auto max-w-7xl py-8 px-4">
         <h1 className="py-6 text-3xl" cfapps-selector="h1">
           Privacy Policy
         </h1>

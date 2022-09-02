@@ -13,8 +13,8 @@ const Accodion = () => {
           </h2>
           <p className="text-gray-500 sm:text-xl dark:text-gray-200">
             The purpose of this FAQ is generally to provide information on
-            frequent questions or concerns about iGram.io downloader. In case
-            you can&apos;t find the answer for your question, feel free to ask
+            frequent questions or concerns about Tadashi downloader. In case you
+            can&apos;t find the answer for your question, feel free to ask
             trough email our contact page.
           </p>
         </div>

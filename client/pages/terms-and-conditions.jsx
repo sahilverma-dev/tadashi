@@ -285,12 +285,20 @@ const TermsAndConditions = () => {
         </p>
         <h1 className="py-6 text-3xl">Contact Us</h1>
         <p>
-          If you have any questions about these Terms and Conditions, You can
-          contact us:
+          If you have any questions about these Terms and Conditions, You can{" "}
+          <Link href="/contact">
+            <a className="text-blue-500">contact us.</a>
+          </Link>
         </p>
-        <ul>
-          <li>By email: Tadashidotio@gmail.com</li>
-        </ul>
+        <p>
+          <b>E Mail</b>{" "}
+          <a
+            href="mailto:sahilverma.webdev@gmail.com"
+            className="text-blue-500"
+          >
+            sahilverma.webdev@gmail.com
+          </a>
+        </p>
       </section>
     </Layout>
   );

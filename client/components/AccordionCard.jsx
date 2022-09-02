@@ -5,18 +5,20 @@ import { useState } from "react";
 
 const AccordionCard = ({ first, title, description }) => {
   const [show, setShow] = useState(first || false);
-  const toogle = () => setShow(!show);
+  const toggle = () => setShow(!show);
   return (
     <>
       <h2 id="accordion-collapse-heading-2">
         <button
           type="button"
-          className={
-            first
-              ? "flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-dark-100 hover:bg-dark-100 dark:hover:bg-dark-900 bg-gray-100 dark:bg-dark-900 text-gray-900 dark:text-white"
-              : "flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-dark-100 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-100"
-          }
-          onClick={toogle}
+          className={`flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-dark-100 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-100
+            ${
+              first
+                ? "border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-dark-100 hover:bg-dark-100 dark:hover:bg-dark-900 bg-gray-100 dark:bg-dark-900"
+                : ""
+            }
+            `}
+          onClick={toggle}
         >
           <span>{title}</span>
           <DownIcon

@@ -98,7 +98,7 @@ const PostCard = ({ userData, post, reels, shortcode }) => {
               key={index}
               className="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-dark-900 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-blue-800"
             >
-              <ImageIcon className="md:inline-flex mr-2 hidden " />
+              <ImageIcon className="inline-flex mr-2  " />
               {item?.width}px
             </a>
           ))}
@@ -112,7 +112,7 @@ const PostCard = ({ userData, post, reels, shortcode }) => {
                   key={index}
                   className="text-white text-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-dark-900 dark:hover:bg-dark-700 focus:outline-none dark:focus:ring-blue-800"
                 >
-                  <VideoIcon className="md:inline-flex hidden mr-2" />
+                  <VideoIcon className="inline-flex  mr-2" />
                   {item?.width}px
                 </a>
               ))}

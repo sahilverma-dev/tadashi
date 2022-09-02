@@ -127,7 +127,10 @@ const App = () => {
     }
   };
   return (
-    <Layout title="Home" description="Instagram Downloader">
+    <Layout
+      title="Home"
+      description="Tadashi is an online web tool to help you with downloading Instagram Photos, Videos and IGTV videos. Tadashi is designed to be easy to use on any device, such as, mobile, tablet or computer."
+    >
       <Hero />
       <section
         id="download-post"

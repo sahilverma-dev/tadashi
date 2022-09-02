@@ -1,5 +1,5 @@
 import { AuthProvider } from "../context/AuthContext";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/globals.css";
@@ -15,8 +15,9 @@ import { AiFillCaretUp as UpArrowIcon } from "react-icons/ai";
 import { useEffect, useState } from "react";
 
 const App = ({ Component, pageProps, router }) => {
-  const url = `http://localhost:3000/${router.route}`;
+  const url = `https://tadashi.vercel.app/${router.route}`;
   const [showButton, setShowButton] = useState(false);
+  const { theme } = useTheme();
   const scrollToTop = () => window.scrollTo(0, 0);
   useEffect(() => {
     window.onscroll = () => {
@@ -30,23 +31,24 @@ const App = ({ Component, pageProps, router }) => {
     <ThemeProvider attribute="class">
       <NextNProgress />
       <AuthProvider>
-        <ToastContainer />
+        <ToastContainer theme={theme} />
         <Head>
           <link rel="icon" href="/images/logo.png" type="image/icon" />
         </Head>
         <DefaultSeo
           titleTemplate="Tadashi | %s"
+          title="Home"
           openGraph={{
             type: "website",
             locale: "en_IE",
             title: "Tadashi | Home",
             url,
             description:
-              "Tadashi is a online web application for downloading instagram posts",
+              "Tadashi is an online web tool to help you with downloading Instagram Photos, Videos and IGTV videos. Tadashi is designed to be easy to use on any device, such as, mobile, tablet or computer.",
             site_name: "Tadashi | Home",
             images: [
               {
-                url: "/images/open-graph.jpg",
+                url: "https://tadashi.vercel.app/images/open-graph.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Tadashi Logo",

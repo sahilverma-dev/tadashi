@@ -14,7 +14,7 @@ export const toolsData = [
     name: "Posts Downloader",
     icon: <ImageIcon />,
     description:
-      "Instagram photo downloader provided by iGram is a great tool for saving images from Instagram posts. With iGram you can download a single posts image as well as download multiple Instagram photos.",
+      "Instagram photo downloader provided by Tadashi is a great tool for saving images from Instagram posts. With Tadashi you can download a single posts image as well as download multiple Instagram photos.",
     underDev: false,
     route: "/tools/posts-downloader",
   },
@@ -23,7 +23,7 @@ export const toolsData = [
     name: "Reels Downloader",
     icon: <PlayIcon />,
     description:
-      "REEL is a new video format that clone the principle of TikTok. Download Instagram REEL videos with help of iGram. Our REEL downloader can help you to save your favorite Reels videos.",
+      "REEL is a new video format that clone the principle of TikTok. Download Instagram REEL videos with help of Tadashi. Our REEL downloader can help you to save your favorite Reels videos.",
     underDev: false,
     route: "/tools/reels-downloader",
   },
@@ -39,7 +39,7 @@ export const toolsData = [
     name: "Video Downloader",
     icon: <VideoIcon />,
     description:
-      "iGram is created to enable you to download IG videos for any purpose you want. iGram supports video downloading for singular video and multiple video from carousels.",
+      "Tadashi is created to enable you to download IG videos for any purpose you want. Tadashi supports video downloading for singular video and multiple video from carousels.",
     underDev: false,
     route: "/tools/video-downloader",
   },
