@@ -286,33 +286,33 @@ const Profile = () => {
                     </a>
                   </Link>
                   <div className="absolute bottom-0 p-2 flex items-center gap-2 bg-white dark:bg-black/40 backdrop-blur-sm rounded-t-lg shadow-lg w-full">
-                    <a
-                      href={`https://instagram.com/${post?.user?.username}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={post?.user?.profilePic}
-                        alt={post?.user?.fullName}
-                        loading="lazy"
-                        className="rounded-full h-8 border aspect-square object-cover"
-                      />
-                    </a>
+                    <Link href={`/user/${post?.user?.username}`}>
+                      <a>
+                        <img
+                          src={post?.user?.profilePic}
+                          alt={post?.user?.fullName}
+                          loading="lazy"
+                          className="rounded-full h-8 border aspect-square object-cover"
+                        />
+                      </a>
+                    </Link>
                     <div className="flex items-center gap-2 flex-grow">
                       <a
                         href={`https://instagram.com/${post?.user?.username}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-ellipsis dark:text-white text-black font-bold w-[70%]"
+                        className="text-ellipsis dark:text-white gap-2 inline-flex items-center text-black font-bold w-[70%]"
+                        title={post?.user?.fullName}
                       >
-                        {post?.user?.fullName}
+                        {post?.user?.fullName?.slice(0, 20)}
+                        {post?.user?.fullName?.length >= 20 ? "... " : " "}
+                        {post?.user?.isVerified && (
+                          <VerifiedIcon
+                            className="text-blue-500 text-xs bg-white rounded-full"
+                            title="A verified account"
+                          />
+                        )}
                       </a>
-                      {post?.user?.isVerified && (
-                        <VerifiedIcon
-                          className="text-blue-500 text-xs bg-white rounded-full"
-                          title="A verified account"
-                        />
-                      )}
                     </div>
                     <a
                       href={`https://instagram.com/p/${post?.id}`}
