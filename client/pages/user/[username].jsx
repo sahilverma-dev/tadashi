@@ -33,23 +33,28 @@ const UserProfile = () => {
 
   const saveUserToDB = async (profile) => {
     try {
-      const docRef = doc(
+      const userDocRef = doc(
         firestore,
         `users/${user?.uid}/profiles/${profile?.id}`
       );
-      setDoc(
-        docRef,
-        {
-          profilePic: profile?.profilePic?.thumbnail,
-          isVerified: profile?.isVerified,
-          username: profile?.username,
-          fullName: profile?.fullName,
-          timestamp: serverTimestamp(),
-        },
-        {
-          merge: true,
-        }
-      );
+      const profileDocRef = doc(firestore, `/profiles/${profile?.id}`);
+      setDoc(profileDocRef, profile, {
+        merge: true,
+      });
+      if (user)
+        setDoc(
+          userDocRef,
+          {
+            profilePic: profile?.profilePic?.thumbnail,
+            isVerified: profile?.isVerified,
+            username: profile?.username,
+            fullName: profile?.fullName,
+            timestamp: serverTimestamp(),
+          },
+          {
+            merge: true,
+          }
+        );
     } catch (error) {
       console.log(error);
       toast.error("Error Saving Post", {
