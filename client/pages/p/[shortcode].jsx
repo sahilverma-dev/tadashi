@@ -28,40 +28,42 @@ const App = () => {
 
   const savePostToDB = async (post) => {
     try {
-      const docRef = doc(
+      const userDocRef = doc(
         firestore,
         `users/${user?.uid}/posts/${post?.shortcode}`
       );
-      setDoc(
-        docRef,
-        {
-          shortcode: post?.shortcode || null,
-          caption: post?.caption || null,
-          user: post?.user || null,
-          likes: post?.likes || null,
-          comments: post?.comments || null,
-          thumbnail: post?.thumbnail || null,
-          isVideo: post?.isVideo || null,
-          isCarousel: post?.isCarousel || null,
-          timestamp: serverTimestamp(),
-        },
-        {
+      const postDocRef = doc(firestore, `/posts/${post?.shortcode}`);
+      const postData = {
+        shortcode: post?.shortcode || null,
+        caption: post?.caption || null,
+        user: post?.user || null,
+        likes: post?.likes || null,
+        comments: post?.comments || null,
+        thumbnail: post?.thumbnail || null,
+        isVideo: post?.isVideo || null,
+        isCarousel: post?.isCarousel || null,
+        timestamp: serverTimestamp(),
+      };
+      setDoc(postDocRef, postData, {
+        merge: true,
+      });
+      if (user)
+        setDoc(userDocRef, postData, {
           merge: true,
-        }
-      );
+        });
     } catch (error) {
       console.log(error);
       toast.error("Error Saving Post", {
         position: "top-right",
         autoClose: 5000,
-        hideProgressBar: false,
+        theme,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
       });
     }
-    // console.log(post);
   };
 
   useEffect(() => {
@@ -76,7 +78,7 @@ const App = () => {
           hideProgressBar: true,
         });
 
-        if (user) savePostToDB(data);
+        savePostToDB(data);
         setIsLoading(false);
       } catch (error) {
         toast.error("Something went wrong.", {
