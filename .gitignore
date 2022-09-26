@@ -6,4 +6,6 @@
 */.env.development
 *.log
 
+.vscode
+
 *.lock
